@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Cooks Randomizer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>Cooks Randomizer</h3>
+
+
+        </div>
+        <div class="row">
+            <button class="btn pink darken-1" onclick="cooks()">Give me two cooks!</button>
+            <button class="btn green darken-4" onclick="alternative()">Alternative</button>
+        </div>
+        <div class="row">
+            <ul id="results"></ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    var availbleCooks = ['Allan Houston',
+        'Andrew Bryant',
+        'Ben Begaud',
+        'Benoj Kumary',
+        'Bill Kemp',
+        'Carissa Pickering',
+        'David Pomeroy',
+        'Grant Hanrick',
+        'Haidar Alaabidi',
+        'Harry Tomkins',
+        'Jared Thomas',
+        'Jeffrey Rossow',
+        'Magdalyn Waranduo',
+        'Mohamed Shale',
+        'Robert Gray',
+        'Robert Vigh',
+        'Tarran Kerr'];
+
+    var max = availbleCooks.length;
+    var elem = document.getElementById('results');
+    function cooks() {
+        var first = Math.floor(Math.random() * (+max - 0) + + 0);
+        var second = Math.floor(Math.random() * (+max - 0) + + 0);
+        while (first == second) {
+            second = Math.floor(Math.random() * (+max - 0) + + 0);
+        }
+        elem.innerHTML = availbleCooks[first] + ' ' + availbleCooks[second]
+    }
+    function alternative() {
+        elem.innerHTML = 'Annika .... has no friends';
+    }
+
+
+</script>
+
+</html>
